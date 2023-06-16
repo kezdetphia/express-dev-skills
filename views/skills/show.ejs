@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Express To-Do (views-todos-index.ejs)</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-  <a href="/">Home</a>
-    |
-  <a href="/skills">All Skills</a>
-   <h3> <%= skill.skill %> </h3>
-   <h3>Comlplete: <%= skill.done ? 'yes' : 'no' %></h3>
-    
-</body>
-</html>
+<%- include('../partials/header') %>
+
+
+  <h3> <%= skill.skill %> </h3>
+  <h3>Comlplete: <%= skill.done ? 'yes' : 'no' %></h3>
+  <!-- <a href="/skills/<%=skill.id%>/edit">All Skills</a> -->
+  
+  <form method="POST" action="/skills/<%=skill.id%>?_method=DELETE">
+    <button type="submit">Delete Skill</button>
+  </form>
+   
+   <%- include('../partials/footer') %>
